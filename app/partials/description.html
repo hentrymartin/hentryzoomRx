@@ -1,0 +1,30 @@
+<div class="full-height row">
+	<div class="col-sm-12 desc-card-title"><span data-ng-bind="selectedCard.title"></span></div>
+	<div class="col-sm-12 desc-card-description clearfix">
+		<div class="col-sm-10 col-xs-10 zero-padding">
+			<input type="text" ng-model="selectedCard.description" class="form-control"/>
+		</div>
+		<div class="col-sm-2 col-xs-2 zero-padding">
+			<button type="button" class="btn btn-action pull-right" data-ng-click="deleteThisCard()">
+				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			</button>
+		</div>
+	</div>
+
+	<div class="col-sm-12 desc-card-comment clearfix">
+		<div class="col-sm-10 col-xs-10 zero-padding">
+			<textarea rows="10" ng-model="comment" class="form-control"></textarea>
+		</div>
+		<div class="col-sm-2 col-xs-2 zero-padding">
+		<button type="button" class="btn btn-action pull-right adjust-btn" data-ng-click="addComment()">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+		</button>
+		</div>
+	</div>
+	<div class="col-sm-12 comments-list  clearfix">
+		<div data-ng-repeat="comment in selectedCard.comments">
+			<div class="col-sm-6 col-xs-6 zero-padding"><span data-ng-bind="comment.commentTitle"></span></div>
+			<div class="col-sm-6 col-xs-6 zero-padding"><span data-ng-bind="comment.date"></span></div>
+		</div>
+	</div>
+</div>

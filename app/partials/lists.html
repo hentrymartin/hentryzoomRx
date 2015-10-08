@@ -1,0 +1,35 @@
+<div ng-show="states.isList" class="full-height row lists">
+	<!-- This is the new list create section -->
+	<div class="btn-bar">
+		<button type="button" class="btn btn-action pull-right" data-ng-click="addNewList()">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+		</button>
+	</div>
+	<!-- This is the list view sections -->
+	<div class="col-sm-3 each-column clearfix" data-ng-class="{'clearBoth' : $index % 3 == 0}" data-ng-repeat="item in lists track by $index" data-drop="true" data-drag="true" ng-model="lists" jqyoui-droppable="{index: {{$index}}}" jqyoui-draggable="{index: {{$index}}, insertInline: true, direction:'jqyouiDirection'}" data-jqyoui-options="{revert: 'invalid'}" data-direction="{{item.jqyouiDirection}}">
+
+		<!-- This is the list header section -->
+		<div class="col-sm-12 clearfix zero-padding list-header">
+			<div class="col-sm-7 zero-padding" ng-bind="item.name"></div>
+			<div class="col-sm-5 zero-padding">
+				<button type="button" class="btn btn-action pull-right" data-ng-click="deleteList(item.id)">
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+				</button>
+			</div>
+		</div>
+
+		<!-- This is the card section -->
+		<div class="col-sm-12 zero-padding each-card" data-ng-repeat="card in item.cards track by $index" data-ng-dblclick="goToDescription(item, card)">
+			<span data-ng-bind="card.title"></span>
+			<span class="glyphicon glyphicon-picture pull-right card-pic"></span>
+		</div>
+
+		<!-- This is the new card creation section -->
+		<div class="col-sm-12 zero-padding card-creation">
+			<button type="button" class="btn btn-action pull-left" data-ng-click="addNewCard(item.cards)">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			</button>
+		</div>
+	</div>
+</div>
+<div ng-show="!states.isList" class="full-height" ui-view></div>

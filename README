@@ -1,0 +1,4 @@
+ApplicationName = 'zoomRx'
+Author = 'Hentry Martin'
+Description = 'This is about list the list of cards and doing CRUD operations in it'
+Documentation = "For detailed documentation please refer to docs folder"

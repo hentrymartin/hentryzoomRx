@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="full-height">
+    <head>
+        <!-- Title and meta tag -->
+        <title>Zoomrx</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Loading Script tags -->
+        <script src="libs/angular.min.js"></script>
+        <script src="libs/ui-router.min.js"></script>
+        <script src="libs/angular-local-storage.min.js"></script>
+        <script src="libs/jquery-2.1.3.min.js"></script>
+        <script src="libs/jquery-ui.min.js"></script>
+        <script src="libs/angular-dragdrop.min.js"></script>
+        <script src="libs/moment.min.js"></script>
+        <script src="libs/lodash.js"></script>
+        <script src="libs/nprogress.js"></script>
+        <script src="libs/toaster.min.js"></script>
+        <script src="app/app.js"></script>
+
+        <!-- Loading styles -->
+        <link rel="stylesheet" type="text/css" href="assets/styles/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/styles/app.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/styles/nprogress.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/styles/toaster.min.css"/>
+
+        <!-- Controller -->
+        <script src="app/js/controllers/DescriptionController.js"></script>
+        <script src="app/js/controllers/ListsController.js"></script>
+
+        <!-- Services -->
+        <script src="app/js/services/ListsService.js"></script>
+    </head>
+    <!-- Application starts here-->
+    <body data-ng-app="zoomRx" class="full-height container">
+
+        <!-- This is the app header -->
+        <header class="row">
+            <div class="col-sm-9 col-xs-7 full-height logo-wrapper">
+                <img src="assets/images/zoomrx-logo.png" alt="zoomRx logo">
+            </div>
+            <div class="col-sm-3 col-xs-5 full-height ">
+                <div class="user-tray pull-right">
+                    <span class="user-name">Hentry</span><span class="icon-user"><i></i></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- This is the toaster container -->
+        <toaster-container></toaster-container>
+
+        <!-- This is the main content -->
+        <main data-ui-view></main>
+    </body>
+</html>
